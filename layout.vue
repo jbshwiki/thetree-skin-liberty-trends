@@ -85,6 +85,7 @@
         <div class="content-wrapper" :class="{ 'hide-sidebar': $store.state.localConfig['liberty.sidebar'] === 'hide' || $store.state.localConfig['liberty.sidebar'] === 'footer' }">
             <div class="liberty-sidebar">
                 <div class="liberty-right-fixed" :class="{ 'fixed': $store.state.localConfig['liberty.sidebar'] === 'fix' }">
+                    <trending-search />
                     <div class="live-recent">
                         <div class="live-recent-header">
                             <ul class="nav nav-tabs">
@@ -195,11 +196,13 @@ import Alert from '~/components/alert';
 import SeedLinkButton from '~/components/seedLinkButton';
 import LocalDate from '~/components/localDate';
 import RecentCard from './layouts/recentCard';
+import TrendingSearch from './layouts/trendingSearch';
 import SearchForm from './layouts/searchForm';
 import ContentTool from './layouts/contentTool';
 import Dropdown from './components/dropdown';
 import SettingModal from './components/settingModal';
 import License from "raw-loader!./LICENSE";
+
 
 export default {
     mixins: [Common],
@@ -208,9 +211,11 @@ export default {
         SeedLinkButton,
         LocalDate,
         RecentCard,
+        TrendingSearch,
         SearchForm,
         Dropdown,
         ContentTool
+
     },
     data() {
         return {
